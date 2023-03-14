@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string ltrim(const string &);
+string rtrim(const string &);
+vector<string> split(const string &);
+
+/*
+ * Complete the 'acmTeam' function below.
+ *
+ * The function is expected to return an INTEGER_ARRAY.
+ * The function accepts STRING_ARRAY topic as parameter.
+ */
+
 vector<int> acmTeam(vector<string> topic)
 {
     vector<int> result;
