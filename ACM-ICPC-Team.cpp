@@ -38,3 +38,43 @@ vector<int> acmTeam(vector<string> topic)
    
    return { highest , highestcount } ;    
 }
+
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string first_multiple_input_temp;
+    getline(cin, first_multiple_input_temp);
+
+    vector<string> first_multiple_input = split(rtrim(first_multiple_input_temp));
+
+    int n = stoi(first_multiple_input[0]);
+
+    int m = stoi(first_multiple_input[1]);
+
+    vector<string> topic(n);
+
+    for (int i = 0; i < n; i++) {
+        string topic_item;
+        getline(cin, topic_item);
+
+        topic[i] = topic_item;
+    }
+
+    vector<int> result = acmTeam(topic);
+
+    for (size_t i = 0; i < result.size(); i++) {
+        fout << result[i];
+
+        if (i != result.size() - 1) {
+            fout << "\n";
+        }
+    }
+
+    fout << "\n";
+
+    fout.close();
+
+    return 0;
+}
