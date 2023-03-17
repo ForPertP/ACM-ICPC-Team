@@ -22,6 +22,7 @@ vector<int> acmTeam(vector<string> topic)
         for( size_t j = i+1; j < topic.size(); ++j)
         {
             int count = 0;
+            
             for ( size_t k = 0 ; k < topic[i].size() ; ++k )
             {
                 if ( topic[i][k] == '1' || topic[j][k] == '1' )
@@ -29,16 +30,16 @@ vector<int> acmTeam(vector<string> topic)
                     count++;
                 }   
             }
-            result.push_back( count ) ;    
+            
+            result.push_back(count);    
         }
     }
    
    int highest = *std::max_element( result.begin() , result.end() );
    int highestcount = std::count( result.begin() , result.end() , highest );
    
-   return { highest , highestcount } ;    
+   return {highest, highestcount};    
 }
-
 
 int main()
 {
@@ -99,4 +100,21 @@ string rtrim(const string &str) {
     );
 
     return s;
+}
+
+vector<string> split(const string &str) {
+    vector<string> tokens;
+
+    string::size_type start = 0;
+    string::size_type end = 0;
+
+    while ((end = str.find(" ", start)) != string::npos) {
+        tokens.push_back(str.substr(start, end - start));
+
+        start = end + 1;
+    }
+
+    tokens.push_back(str.substr(start));
+
+    return tokens;
 }
