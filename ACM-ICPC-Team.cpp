@@ -12,7 +12,6 @@ vector<string> split(const string &);
  * The function is expected to return an INTEGER_ARRAY.
  * The function accepts STRING_ARRAY topic as parameter.
  */
-
 vector<int> acmTeam(vector<string> topic)
 {
     vector<int> result;
@@ -22,7 +21,6 @@ vector<int> acmTeam(vector<string> topic)
         for( size_t j = i+1; j < topic.size(); ++j)
         {
             int count = 0;
-            
             for ( size_t k = 0 ; k < topic[i].size() ; ++k )
             {
                 if ( topic[i][k] == '1' || topic[j][k] == '1' )
